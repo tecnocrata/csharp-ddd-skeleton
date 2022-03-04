@@ -19,6 +19,9 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
+      - name: Listing all docker containers
+        run: docker ps -all
+
       - name: Init databases
         run: docker exec codelytv-chsarp_ddd_skeleton-mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Your_password123 -d master -i init.sql
         
