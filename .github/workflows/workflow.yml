@@ -19,6 +19,11 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
+      - name: Sleep for 30 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '45s'
+
       - name: Listing all docker containers
         run: docker ps -all
 
